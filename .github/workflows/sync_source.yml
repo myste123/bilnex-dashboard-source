@@ -1,0 +1,36 @@
+name: Sync AltStore source
+
+# The ipa lives on the office server behind a Cloudflare quick tunnel whose
+# hostname changes every time the tunnel restarts. This mirrors the server's
+# apps.json here on a permanent HTTPS URL, so the source URL added on the
+# phone never has to change.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch current manifest from the office server
+        run: |
+          curl -fsS --max-time 30 http://195.214.133.242:33151/apps.json -o fetched.json
+          python3 -c "import json;d=json.load(open('fetched.json'));assert d['apps'][0]['versions'][0]['downloadURL'].startswith('https://'),'downloadURL is not https';print('ok',d['apps'][0]['versions'][0]['version'],d['apps'][0]['versions'][0]['downloadURL'])"
+          mv fetched.json apps.json
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- apps.json; then
+            echo "değişiklik yok"
+          else
+            git config user.name "bilnex-sync"
+            git config user.email "berkayygttp@gmail.com"
+            git add apps.json
+            git commit -m "kaynak güncellendi: $(python3 -c "import json;d=json.load(open('apps.json'));v=d['apps'][0]['versions'][0];print(v['version'], v['downloadURL'])")"
+            git push
+          fi
