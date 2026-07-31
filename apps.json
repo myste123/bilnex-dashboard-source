@@ -3,7 +3,7 @@
   "identifier": "com.bilnex.altsource",
   "subtitle": "Bilnex ofis uygulamaları",
   "description": "Bilnex Dashboard'ın kendi güncelleme kaynağı.",
-  "iconURL": "https://make-adrian-gtk-bloom.trycloudflare.com/icon.png",
+  "iconURL": "https://throat-generators-www-specialties.trycloudflare.com/icon.png",
   "tintColor": "00488D",
   "apps": [
     {
@@ -12,25 +12,25 @@
       "developerName": "Berkay",
       "subtitle": "Nöbet, yemek ve hatırlatıcılar",
       "localizedDescription": "Ofis sunucusundaki botların tek panelde toplandığı uygulama: günün nöbetçisi ve izinliler, yemek menüsü ve fotoğrafları, hatırlatıcılar ve TikTok seri takibi.",
-      "iconURL": "https://make-adrian-gtk-bloom.trycloudflare.com/icon.png",
+      "iconURL": "https://throat-generators-www-specialties.trycloudflare.com/icon.png",
       "tintColor": "00488D",
       "category": "utilities",
       "screenshotURLs": [],
       "versions": [
         {
           "version": "1.0.1",
-          "date": "2026-07-29",
+          "date": "2026-07-31",
           "localizedDescription": "Guncelleme.",
-          "downloadURL": "https://make-adrian-gtk-bloom.trycloudflare.com/bilnex_bot_dashboard.ipa",
+          "downloadURL": "https://throat-generators-www-specialties.trycloudflare.com/bilnex_bot_dashboard.ipa",
           "size": 7690774,
           "sha256": "37ad6e2fdc326cf3d6cf4a9f6521e17c2d6ecf70b506521460b511384e50f8c0",
           "minOSVersion": "12.0"
         }
       ],
       "version": "1.0.1",
-      "versionDate": "2026-07-29",
+      "versionDate": "2026-07-31",
       "versionDescription": "Guncelleme.",
-      "downloadURL": "https://make-adrian-gtk-bloom.trycloudflare.com/bilnex_bot_dashboard.ipa",
+      "downloadURL": "https://throat-generators-www-specialties.trycloudflare.com/bilnex_bot_dashboard.ipa",
       "size": 7690774
     }
   ],
